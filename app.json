@@ -1,5 +1,10 @@
 {
-  "name": "Node.js Getting Started",
-  "description": "description",
-  "repository": "https://github.com/AndriiSht/gatsby-gitbook-starter"
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-static"
+    }
+  ]
 }
