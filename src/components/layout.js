@@ -5,6 +5,7 @@ import ThemeProvider from "./themeProvider";
 import mdxComponents from "./mdxComponents";
 import Sidebar from "./sidebar";
 import RightSidebar from "./rightSidebar";
+import withLocation from "../hocs/withLocation";
 
 const Wrapper = styled("div")`
   display: flex;
@@ -40,22 +41,25 @@ const LeftSideBarWidth = styled("div")`
 const RightSideBarWidth = styled("div")`
   width: 224px;
 `;
-const Layout = ({ children, location }) => (
-  <ThemeProvider location={location}>
-    <MDXProvider components={mdxComponents}>
-      <Wrapper>
-        <LeftSideBarWidth className={"hidden-xs"}>
-          <Sidebar location={location} />
-        </LeftSideBarWidth>
-        <Content>
-          <MaxWidth>{children}</MaxWidth>
-        </Content>
-        <RightSideBarWidth className={"hidden-xs"}>
-          <RightSidebar location={location} />
-        </RightSideBarWidth>
-      </Wrapper>
-    </MDXProvider>
-  </ThemeProvider>
-);
+const Layout = ({ children, location }) => {
+  console.log(location);
+  return (
+    <ThemeProvider location={location}>
+      <MDXProvider components={mdxComponents}>
+        <Wrapper>
+          <LeftSideBarWidth className={"hidden-xs"}>
+            <Sidebar location={location} />
+          </LeftSideBarWidth>
+          <Content>
+            <MaxWidth>{children}</MaxWidth>
+          </Content>
+          <RightSideBarWidth className={"hidden-xs"}>
+            <RightSidebar location={location} />
+          </RightSideBarWidth>
+        </Wrapper>
+      </MDXProvider>
+    </ThemeProvider>
+  );
+};
 
 export default Layout;
