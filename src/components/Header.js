@@ -44,7 +44,7 @@ const Header = ({ location }) => (
     `}
     render={data => {
       const logoImg = require("./images/OverOps.png");
-      const twitter = require("./images/twitter.svg");
+      // const twitter = require("./images/twitter.svg");
       const {
         site: {
           siteMetadata: {
@@ -147,7 +147,7 @@ const Header = ({ location }) => (
                     <div>Login</div>
                   </div>
                 ) : null}
-                {tweetText !== "" ? (
+                {/* {tweetText !== "" ? (
                   <li>
                     <a
                       href={
@@ -162,7 +162,7 @@ const Header = ({ location }) => (
                       />
                     </a>
                   </li>
-                ) : null}
+                ) : null} */}
               </ul>
             </div>
           </nav>
