@@ -5,7 +5,6 @@ import ThemeProvider from "./themeProvider";
 import mdxComponents from "./mdxComponents";
 import Sidebar from "./sidebar";
 import RightSidebar from "./rightSidebar";
-import withLocation from "../hocs/withLocation";
 
 const Wrapper = styled("div")`
   display: flex;
@@ -42,7 +41,6 @@ const RightSideBarWidth = styled("div")`
   width: 224px;
 `;
 const Layout = ({ children, location }) => {
-  console.log(location);
   return (
     <ThemeProvider location={location}>
       <MDXProvider components={mdxComponents}>

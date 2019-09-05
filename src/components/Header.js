@@ -3,8 +3,8 @@ import { StaticQuery, graphql } from "gatsby";
 import Link from "./link";
 import "./styles.css";
 import config from "../../config.js";
-
 import Search from "./search/index";
+import RedirectArrowBlock from "../common/redirectArrowBlock/redirectArrowBlock";
 const help = require("./images/help.svg");
 const isSearchEnabled =
   config.header.search && config.header.search.enabled ? true : false;
@@ -43,8 +43,6 @@ const Header = ({ location }) => (
       }
     `}
     render={data => {
-      const logoImg = require("./images/OverOps.png");
-      // const twitter = require("./images/twitter.svg");
       const {
         site: {
           siteMetadata: {
@@ -139,14 +137,15 @@ const Header = ({ location }) => (
                   </li>
                 ) : null}
                 {tweetText !== "" || githubUrl !== "" ? (
-                  <div className="mainNavigation">
-                    <div>Documentation</div>
-                    <div>API</div>
-                    <div>Community</div>
-                    <div>Support</div>
-                    <div>Login</div>
-                  </div>
-                ) : null}
+                  <RedirectArrowBlock textValue="Select a deployment model" />
+                ) : // <div className="mainNavigation">
+                //   <div>Documentation</div>
+                //   <div>API</div>
+                //   <div>Community</div>
+                //   <div>Support</div>
+                //   <div>Login</div>
+                // </div>
+                null}
                 {/* {tweetText !== "" ? (
                   <li>
                     <a
