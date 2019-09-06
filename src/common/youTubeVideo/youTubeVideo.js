@@ -1,7 +1,7 @@
 import React from "react";
 import "./components/styles.css";
 
-const YoutubeEmbed = ({ link, windowWidth, windowHeight }) => (
+const YouTubeVideo = ({ link, windowWidth, windowHeight }) => (
   <div className="video-responsive">
     <iframe
       width={windowWidth}
@@ -14,4 +14,4 @@ const YoutubeEmbed = ({ link, windowWidth, windowHeight }) => (
   </div>
 );
 
-export default YoutubeEmbed;
+export default YouTubeVideo;

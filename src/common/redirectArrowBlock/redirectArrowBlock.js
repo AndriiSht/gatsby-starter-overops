@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import withLocation from "../../hocs/withLocation";
 
 import "./redirectArrowBlock.css";
@@ -7,47 +7,47 @@ class RedirectArrowBlock extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      installationKeyInput: "",
-      collectorPortInput: ""
+      installationKeyValue: "",
+      collectorPortValue: ""
     };
   }
 
   componentWillMount() {
     const { search } = this.props;
     this.setState({
-      installationKeyInput: search.name,
-      collectorPortInput: search.token
+      installationKeyValue: search.name,
+      collectorPortValue: search.token
     });
-  }
+  };
 
   handleKeyInputChange = event => {
     this.setState({
-      installationKeyInput: event.target.value
+      installationKeyValue: event.target.value
     });
   };
 
   handlePortInputChange = event => {
     this.setState({
-      collectorPortInput: event.target.value
+      collectorPortValue: event.target.value
     });
   };
 
   render() {
-    const { installationKeyInput, collectorPortInput } = this.state;
+    const { installationKeyValue, collectorPortValue } = this.state;
 
     return (
       <div className="redirectArrowBlockWrapper">
         <label>Installation key</label>
         <input
           type="text"
-          value={installationKeyInput}
+          value={installationKeyValue}
           onChange={this.handleKeyInputChange}
         />
         <label>Collector port</label>
         <input
           placeholder="6060"
           type="text"
-          value={collectorPortInput}
+          value={collectorPortValue}
           onChange={this.handlePortInputChange}
         />
       </div>
@@ -56,3 +56,5 @@ class RedirectArrowBlock extends Component {
 }
 
 export default withLocation(RedirectArrowBlock);
+
+// http://localhost:8000/introduction/2-intro-to-the-reliability/?name=TestUser&token=123_123

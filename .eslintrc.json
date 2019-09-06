@@ -1,15 +1,36 @@
 {
   "env": {
-    "browser": true
+    "browser": true,
+    "es6": true,
+    "node": true
   },
   "globals": {
-    "graphql": false
+    "graphql": false,
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
   },
   "parserOptions": {
-    "ecmaVersion": 10,
+    "ecmaVersion": 2018,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
     }
   }
 }
+
+// module.exports = {
+//   "env": {
+//       "es6": true,
+//       "node": true
+//   },
+//   "extends": "eslint:recommended",
+//   "globals": {
+//       "Atomics": "readonly",
+//       "SharedArrayBuffer": "readonly"
+//   },
+//   "parserOptions": {
+//       "ecmaVersion": 2018,
+//       "sourceType": "module"
+//   },
+//   "rules": {
+//   }
